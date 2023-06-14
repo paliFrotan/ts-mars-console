@@ -1,18 +1,24 @@
-# TypeScript project with Tests
+# Mars Rover Kata
 
-This repository can be used as a template for creating a TypeScript project using Jest for testing.
+This project is an implementation of the Mars Rover Kata in TypeScript. It allows users to enter input via the console to create a plateau, add rovers, and issue movement instructions to the rovers.
 
-## Instructions
+## Installation
 
-- Click the "Use this template" button
+To install this project, clone the repository and run `npm install` to install the dependencies.
 
-- Click "Create new repository"
+## Usage
 
-- Give your repository a name and click "Create repository from template"
+To run this project, use the `npm start` command. This will start the program and prompt you for input.
 
-- Clone down your new repository to your computer
+Enter the size of the plateau as two numbers separated by a space, such as `5 5`. Then enter the starting position and direction of a rover as two numbers and a letter separated by spaces, such as `1 2 N`. Finally, enter the movement instructions for the rover as a string of letters, such as `LMLMLMLMM`.
 
-- Navigate to the directory on your command line
+The program will process your input and output the final position and direction of the rover. You can enter additional rovers by following the same steps.
 
-- Run `npm install` followed by `npm test` to run the tests
+## Features
+
+This project includes several features, such as collision detection between rovers and the ability to enter multiple rovers. 
+
+## Issues
+
+Because of time constraints one bug is noticeable errorMessage doesn't show the collision but gives incorrect userMessage.
 
