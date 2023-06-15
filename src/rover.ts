@@ -122,17 +122,19 @@ export function instructionsRover(rover: Rover, plateau: Plateau, instructions: 
         break;
       case 'M':
         result = move(result as Rover, value, plateau);
-        if ('x' in result && isRoverCollidingWithPoints(result as Rover, roverPositions)) {
+        if ('x' in result && isRoverCollidingWithPoints(result as Rover, points)) {
           result = { index: 4, userMessage: `Collision detected between rover@(${result.x},${result.y}) and collision point.` };
           break;
         }
-        break;
+        // if('x' in result)
+        //   points.push({ posX: result.x, posY: result.y });
+        // break;
     }
   }
-  roverPositions.push({ posX: rover.x, posY: rover.y });
   if ('userMessage' in result) {
     return ""+result.userMessage;
   } else {
+    points.push({ posX: result.x, posY: result.y });
     return `${result.x} ${result.y} ${result.direction}`;
   }
 }

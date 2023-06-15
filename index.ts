@@ -33,14 +33,10 @@ rl.question('Enter plateau size: ', (answer) => {
                     if ('x' in rover  && 'width' in ans){
                         let newPosition = instructionsRover(rover, ans, instructions,collisionPoints);
                         roverCount++;
-                        //if('index' in newPosition)
-                            console.log(newPosition);
+                        console.log(newPosition);
                     }
                     rl.question('Add another rover? (y/n): ', (addAnother) => {
                         if (addAnother.toLowerCase() === 'y') {
-                            if(roverCount > 0 && 'x' in rover){
-                                collisionPoints.push({posX:rover.x,posY:rover.y});
-                            }
                             addRover();
                         } else {
                             rl.close();
