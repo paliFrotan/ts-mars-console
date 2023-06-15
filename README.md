@@ -20,7 +20,7 @@ This project includes several features, such as collision detection between rove
 
 ## Issues
 
-Because of time constraints one bug is noticeable errorMessage doesn't show the collision.
+Because of time constraints one bug is noticeable in my console program it shows instructions also does not exit console program.
 
 ## Output expected for:
 

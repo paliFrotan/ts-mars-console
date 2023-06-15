@@ -14,14 +14,16 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+
 let collisionPoints: CollisionPoints[] = [{ posX: -1, posY: -1}];
 
 rl.question('Enter plateau size: ', (answer) => {
     
     let ans = createPlateau(answer);
-
+    if ('index' in ans) {
+        console.log(ans.userMessage);
+    }
     function addRover() {
-        let roverCount = 0;
         rl.question('Enter rover starting position and direction: ', (roverInput) => {
             let rover = createRover(roverInput);
             if ('index' in rover) {
@@ -32,7 +34,6 @@ rl.question('Enter plateau size: ', (answer) => {
                 rl.question('Enter instructions: ', (instructions) => {
                     if ('x' in rover  && 'width' in ans){
                         let newPosition = instructionsRover(rover, ans, instructions,collisionPoints);
-                        roverCount++;
                         console.log(newPosition);
                     }
                     rl.question('Add another rover? (y/n): ', (addAnother) => {
