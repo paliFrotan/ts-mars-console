@@ -20,5 +20,16 @@ This project includes several features, such as collision detection between rove
 
 ## Issues
 
-Because of time constraints one bug is noticeable errorMessage doesn't show the collision but gives incorrect userMessage.
+Because of time constraints one bug is noticeable errorMessage doesn't show the collision.
+
+## Output expected for:
+
+5 5
+1 2 N
+LMLMLMLMM
+3 3 E
+MMRMMRMRRM
+
+1 3 N
+5 1 E
 

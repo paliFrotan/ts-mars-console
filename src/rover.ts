@@ -29,6 +29,7 @@ export function createPlateau(sizeString: string): Plateau | ErrorMessage {
   depth++;
   return { width, depth };
 }
+let roverPositions: CollisionPoints[] = [];
 
 export function createRover(roverString: string): Rover | ErrorMessage {
   if (roverString.length !== 5 || isNaN(Number(roverString[0])) || isNaN(Number(roverString[2])) || !['N', 'E', 'S', 'W'].includes(roverString[4])) {
@@ -121,14 +122,16 @@ export function instructionsRover(rover: Rover, plateau: Plateau, instructions: 
         break;
       case 'M':
         result = move(result as Rover, value, plateau);
-        if ('x' in result && isRoverCollidingWithPoints(result as Rover, points)) {
-          return { index: 4, userMessage: `Collision detected between rover@(${result.x},${result.y}) and collision point.` };
+        if ('x' in result && isRoverCollidingWithPoints(result as Rover, roverPositions)) {
+          result = { index: 4, userMessage: `Collision detected between rover@(${result.x},${result.y}) and collision point.` };
+          break;
         }
         break;
     }
   }
-  if ('index' in result && 'userMessage' in result) {
-    return result;
+  roverPositions.push({ posX: rover.x, posY: rover.y });
+  if ('userMessage' in result) {
+    return ""+result.userMessage;
   } else {
     return `${result.x} ${result.y} ${result.direction}`;
   }
