@@ -20,16 +20,16 @@ This project includes several features, such as collision detection between rove
 
 ## Issues
 
-Because of time constraints one bug is noticeable in my console program it shows instructions also does not exit console program.
+For future development need to embelish each Rover to have a name and functions/sensors that allow pictures to be taken for example.
 
 ## Output expected for:
 
-5 5
-1 2 N
-LMLMLMLMM
-3 3 E
-MMRMMRMRRM
+ 5 5
+ 1 2 N
+ LMLMLMLMM
+ 3 3 E
+ MMRMMRMRRM
 
-1 3 N
-5 1 E
+ 1 3 N
+ 5 1 E
 
